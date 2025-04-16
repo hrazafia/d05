@@ -1,0 +1,222 @@
+Contenu
+I Introduction 2
+
+II Règles générales 3
+
+III Exercice 00 : Maman, quand je serai grand, je veux être bureaucrate ! 6
+
+IV Exercice 01 : En ligne, asticots ! 8
+
+V Exercice 02 : Non, vous avez besoin du formulaire 28B, pas du 28C... 10
+
+VI Exercice 03 : Au moins, ça vaut mieux que de faire du café 12
+
+VII Soumission et évaluation par les pairs 14
+
+
+Chapitre I Introduction
+C++ est un langage de programmation généraliste créé par Bjarne Stroustrup comme une extension du langage de programmation C, ou "C avec Classes" (source : Wikipedia).
+
+Le but de ces modules est de vous introduire à la Programmation Orientée Objet. Cela sera le point de départ de votre voyage en C++. De nombreux langages sont recommandés pour apprendre la POO. Nous avons choisi C++ car il est dérivé de votre vieil ami, C.
+
+Parce que c'est un langage complexe, et afin de garder les choses simples, votre code sera conforme à la norme C++98. Nous sommes conscients que le C++ moderne est significativement différent à bien des égards. Donc, si vous voulez devenir un développeur C++ compétent, il vous appartient d'aller plus loin après le 42 Common Core ! 2.
+
+
+Chapitre II Règles générales
+Compilation• Compilez votre code avec c++ et les drapeaux -Wall -Wextra -Werror• Votre code doit toujours se compiler si vous ajoutez le drapeau -std=c++98
+
+Conventions de formatage et de nommage• Les répertoires d'exercice seront nommés de cette manière : ex00, ex01, ..., exn• Nommez vos fichiers, classes, fonctions, fonctions membres et attributs comme requis dans les directives.• Écrivez les noms de classe en format UpperCamelCase. Les fichiers contenant du code de classe seront toujours nommés selon le nom de la classe. Par exemple : ClassName.hpp / ClassName.h, ClassName.cpp, ou ClassName.tpp. Ensuite, si vous avez un fichier d'en-tête contenant la définition d'une classe "BrickWall" représentant un mur de briques, son nom sera BrickWall.hpp.• Sauf indication contraire, chaque message de sortie doit se terminer par un caractère de nouvelle ligne et être affiché sur la sortie standard.• Au revoir Norminette ! Aucun style de codage n'est imposé dans les modules C++. Vous pouvez suivre votre préféré. Mais gardez à l'esprit que le code que vos évaluateurs ne peuvent pas comprendre est un code qu'ils ne peuvent pas noter. Faites de votre mieux pour écrire un code propre et lisible.
+
+Autorisé/InterditVous ne codez plus en C. Il est temps de C++ ! Par conséquent :• Vous êtes autorisé à utiliser presque tout de la bibliothèque standard. Ainsi, au lieu de vous en tenir à ce que vous savez déjà, il serait judicieux d'utiliser les versions C++-ish des fonctions C auxquelles vous êtes habitué autant que possible.• Cependant, vous ne pouvez pas utiliser d'autre bibliothèque externe. Cela signifie que les bibliothèques C++11 (et les formes dérivées) et Boost sont interdites.Les fonctions suivantes sont également interdites : alloc() et free(). Si vous les utilisez, votre note sera de 0 et c'est tout.
+
+
+C++ Module 05
+Repetition et Exceptions
+
+• Notez que, sauf indication contraire explicite, les mots-clés using namespace et friend sont interdits. Sinon, votre note sera de -42.
+
+• Vous êtes autorisé à utiliser la STL uniquement dans les Modules 08 et 09. Cela signifie : pas de Conteneurs (vector/list/map, etc.) et pas d' Algorithmes (tout ce qui nécessite d'inclure l'en-tête ) jusqu'à ce moment-là. Sinon, votre note sera de -42.
+
+Quelques exigences de conception
+
+• Les fuites de mémoire se produisent également en C++. Lorsque vous allouez de la mémoire (en utilisant le mot-clé new), vous devez éviter les fuites de mémoire.
+
+• Du Module 02 au Module 09, vos classes doivent être conçues dans la Forme Canonique Orthodoxe, sauf indication contraire explicite.
+
+• Toute implémentation de fonction mise dans un fichier d'en-tête (sauf pour les modèles de fonction) signifie 0 pour l'exercice.
+
+• Vous devez être capable d'utiliser chacun de vos en-têtes indépendamment des autres. Ainsi, ils doivent inclure toutes les dépendances dont ils ont besoin. Cependant, vous devez éviter le problème de double inclusion en ajoutant des gardes d'inclusion. Sinon, votre note sera de 0.
+
+Lisez-moi
+
+• Vous pouvez ajouter des fichiers supplémentaires si vous en avez besoin (c'est-à-dire pour diviser votre code). Comme ces devoirs ne sont pas vérifiés par un programme, n'hésitez pas à le faire tant que vous remettez les fichiers obligatoires.
+
+• Parfois, les directives d'un exercice semblent courtes mais les exemples peuvent montrer des exigences qui ne sont pas explicitement écrites dans les instructions.
+
+• Lisez chaque module complètement avant de commencer ! Vraiment, faites-le.
+
+• Par Odin, par Thor ! Utilisez votre cerveau !!!
+
+Concernant le Makefile pour les projets C++, les mêmes règles que pour le C s'appliquent (voir le chapitre Norm sur le Makefile).
+
+Vous devrez implémenter beaucoup de classes. Cela peut sembler fastidieux, à moins que vous ne soyez capable de script votre éditeur de texte préféré.
+
+
+C++ Module 05
+
+Repetition and Exceptions
+
+You are given a certain amount of freedom to complete the exercises. However, follow the mandatory rules and don’t be lazy.
+
+You would miss a lot of useful information!
+
+Do not hesitate to read about theoretical concepts.
+
+
+Chapitre III
+Exercice 00 : Maman, quand je serai grand, je veux être un bureaucrate !
+
+Exercice : 00 Maman, quand je serai grand, je veux être un bureaucrate !
+
+Répertoire de remise : ex 00 /
+
+Fichiers à remettre : Makefile, main.cpp, Bureaucrat.{h, hpp}, Bureaucrat.cpp
+
+Fonctions interdites : Aucune
+
+Veuillez noter que les classes d'exception n'ont pas besoin d'être conçues en Forme Canonique Orthodoxe. Cependant, chaque autre classe doit la suivre.
+
+Concevons un cauchemar artificiel de bureaux, de couloirs, de formulaires et de files d'attente. Ça a l'air amusant ? Non ? Tant pis.
+
+Tout d'abord, commencez par le plus petit rouage de cette vaste machine bureaucratique : le Bureaucrate. Un Bureaucrate doit avoir :• Un nom constant.• Un grade qui varie de 1 (le grade le plus élevé) à 150 (le grade le plus bas). Toute tentative d'instancier un Bureaucrate avec un grade invalide doit lancer une exception : soit une Bureaucrate::GradeTooHighException soit une Bureaucrate::GradeTooLowException.
+
+
+C++ Module 05
+
+Repetition et Exceptions
+
+Vous fournirez des accesseurs pour les deux attributs :
+
+getName()
+
+et
+
+getGrade() .
+
+Vous devez également implémenter deux fonctions membres pour incrémenter ou décrémenter le grade du bureaucrate. Si le grade sort de la plage, les deux fonctions doivent lancer les mêmes exceptions que le constructeur.
+
+Rappelez-vous, puisque le grade 1 est le plus élevé et 150 le plus bas, incrémenter un grade 3 devrait aboutir à un grade 2 pour le bureaucrate.
+
+Les exceptions lancées doivent être attrapables en utilisant des blocs try et catch :
+
+try { //}catch (std::exception & e) { //}
+
+Vous devez implémenter une surcharge de l'opérateur d'insertion («) pour imprimer la sortie dans le format suivant (sans les chevrons) :
+
+, grade de bureaucrate .
+
+Comme d'habitude, soumettez quelques tests pour prouver que tout fonctionne comme prévu.
+
+
+
+Exercice 01 : Formez-vous, asticots !
+
+Exercice : 01Formez-vous, asticots !
+
+Répertoire de remise : ex 01 /Fichiers à remettre : Fichiers de l'exercice précédent + Form.{h, hpp}, Form.cpp
+
+Fonctions interdites : Aucune
+
+Maintenant que vous avez des bureaucrates, donnons-leur quelque chose à faire. Quelle meilleure activité pourrait-il y avoir que de remplir une pile de formulaires ? Créons une classe Form . Elle a :• Un nom constant.• Un booléen indiquant s'il est signé (à la construction, il ne l'est pas).• Un grade constant requis pour le signer.• Un grade constant requis pour l'exécuter.
+
+Tous ces attributs sont privés , pas protégés. Les grades du Form suivent les mêmes règles que ceux du Bureaucrate. Ainsi, les exceptions suivantes seront lancées si le grade d'un formulaire est hors limites :Form::GradeTooHighException et Form::GradeTooLowException .
+
+Comme auparavant, écrivez des accesseurs pour tous les attributs et surchargez l'opérateur d'insertion («) pour imprimer toutes les informations du formulaire.
+
+
+Aussi, ajoutez une fonction membre beSigned() au Formulaire qui prend un Bureaucrate comme paramètre. Cela change le statut du formulaire en signé si le grade du bureaucrate est suffisamment élevé (supérieur ou égal à celui requis). N'oubliez pas, le grade 1 est plus élevé que le grade 2. Si le grade est trop bas, lancez une Form::GradeTooLowException .
+
+Ensuite, modifiez la fonction membre signForm() dans la classe Bureaucrate. Cette fonction doit appeler Form::beSigned() pour tenter de signer le formulaire.
+
+Si le formulaire est signé avec succès, il imprimera quelque chose comme : a signé . Sinon, il imprimera quelque chose comme : n’a pas pu signer parce que .
+
+Implémentez et soumettez quelques tests pour vous assurer que tout fonctionne comme prévu. 9.
+
+
+
+Exercice 02 : Non, vous avez besoin du formulaire 28B, pas du 28C...
+
+Exercice : 02
+
+Non, vous avez besoin du formulaire 28B, pas du 28C...
+
+Répertoire de remise : ex 02 /
+
+Fichiers à remettre : Makefile, main.cpp, Bureaucrat., + AForm., ShrubberyCreationForm., + RobotomyRequestForm., PresidentialPardonForm.
+
+Fonctions interdites : Aucune
+
+Maintenant que vous avez des formulaires de base, il est temps d'en créer quelques-uns de plus qui font réellement quelque chose. Dans tous les cas, la classe de base Form doit être une classe abstraite et doit donc être renommée AForm.
+
+Gardez à l'esprit que les attributs du formulaire doivent rester privés et qu'ils appartiennent à la classe de base. Ajoutez les classes concrètes suivantes :
+
+• ShrubberyCreationForm : Grades requis : signature 145, exécution 137 Crée un fichier _shrubbery dans le répertoire de travail et écrit des arbres ASCII à l'intérieur.
+
+• RobotomyRequestForm : Grades requis : signature 72, exécution 45 Fait des bruits de perçage, puis informe que a été robotomisé avec succès 50 % du temps. Sinon, il informe que la robotomie a échoué.
+
+• PresidentialPardonForm : Grades requis : signature 25, exécution 5 Informe que a été gracié par Zaphod Beeblebrox.
+
+Tous prennent seulement un paramètre dans leur constructeur : la cible du formulaire. Par exemple, "maison" si vous voulez planter des arbustes à la maison. 10.
+
+
+Repetition et Exceptions
+
+Maintenant, ajoutez la fonction membre execute(Bureaucrat const & executor) const à la forme de base et implémentez une fonction pour exécuter l'action de la forme dans les classes concrètes. Vous devez vérifier que la forme est signée et que le grade du bureaucrate tentant d'exécuter la forme est suffisamment élevé. Sinon, lancez une exception appropriée. Que vous vérifiiez les exigences dans chaque classe concrète ou dans la classe de base (et que vous appeliez ensuite une autre fonction pour exécuter la forme) dépend de vous. Cependant, une façon est plus élégante que l'autre. Enfin, ajoutez la fonction membre executeForm(AForm const & form) const à la classe Bureaucrat. Elle doit tenter d'exécuter la forme. Si cela réussit, imprimez quelque chose comme : a exécuté Si ce n'est pas le cas, imprimez un message d'erreur explicite. Implémentez et soumettez quelques tests pour vous assurer que tout fonctionne comme prévu. 11.
+
+
+
+Exercice 03 : Au moins, cela bat la préparation de café
+
+Exercice : 03
+
+Au moins, cela bat la préparation de café
+
+Répertoire de remise : ex 03 /
+
+Fichiers à remettre : Fichiers des exercices précédents + Intern.{h, hpp}, Intern.cpp
+
+Fonctions interdites : Aucune
+
+Puisque remplir des formulaires toute la journée serait trop cruel pour nos bureaucrates, les stagiaires existent pour assumer cette tâche fastidieuse. Dans cet exercice, vous devez implémenter la classe Intern. Le stagiaire n'a pas de nom, pas de grade, et pas de caractéristiques uniques. La seule chose qui importe aux bureaucrates, c'est qu'ils fassent leur travail. Cependant, le stagiaire a une capacité clé : la fonction makeForm().
+
+Cette fonction prend deux chaînes comme paramètres : la première représente le nom d'un formulaire, et la seconde représente la cible du formulaire. Elle retourne un pointeur vers un objet AForm (correspondant au nom du formulaire passé en paramètre), avec sa cible initialisée au deuxième paramètre.
+
+Elle devrait imprimer quelque chose comme : Intern crée
+
+Si le nom de formulaire fourni n'existe pas, imprimez un message d'erreur explicite. 12.
+
+
+C++ Module 05
+Repetition et Exceptions
+
+Vous devez éviter des solutions illisibles et désordonnées, telles que l'utilisation d'une structure if/elseif/else excessive.
+
+Ce type d'approche ne sera pas accepté lors du processus d'évaluation. Vous n'êtes plus dans la Piscine (piscine).
+
+Comme d'habitude, vous devez tout tester pour vous assurer que cela fonctionne comme prévu.
+
+Par exemple, le code suivant crée un
+
+RobotomyRequestForm
+
+ciblé sur "Bender" :
+
+{ Intern someRandomIntern; AForm* rrf; rrf = someRandomIntern.makeForm("robotomy request", "Bender"); }
+
+
+Soumettez votre devoir à votre dépôt Git comme d'habitude.
+
+Seul le travail à l'intérieur de votre dépôt sera évalué lors de la défense.
+
+Assurez-vous de vérifier les noms de vos dossiers et fichiers pour vous assurer qu'ils sont corrects.
+
