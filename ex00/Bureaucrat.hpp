@@ -1,21 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrazafia <hrazafia@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 09:07:57 by hrazafia          #+#    #+#             */
-/*   Updated: 2025/04/18 09:27:31 by hrazafia         ###   ########.fr       */
+/*   Created: 2025/04/18 09:10:39 by hrazafia          #+#    #+#             */
+/*   Updated: 2025/04/18 09:22:48 by hrazafia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Bureaucrat.hpp"
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
-int	main(void)
+#include <string>
+
+class Bureaucrat
 {
-	Bureaucrat	foo;
-	std::cout << "Hello " << foo.getName() << std::endl;
-	return (0);
-}
+	private:
+		const std::string	_name;
+
+	public:
+							Bureaucrat(const std::string& name);
+							Bureaucrat(void);
+							Bureaucrat(const Bureaucrat& other);
+							virtual ~Bureaucrat(void);
+		Bureaucrat&			operator=(const Bureaucrat& other);
+
+		const std::string&	getName(void) const;
+};
+
+#endif
