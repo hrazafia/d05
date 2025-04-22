@@ -1,0 +1,4 @@
+The stack memory is
+responsible for keeping track of three types of information about each function: values of
+parameters, values of local variables, and the return address of the calling function in code
+memory.
