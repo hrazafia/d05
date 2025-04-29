@@ -5,17 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrazafia <hrazafia@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 09:07:57 by hrazafia          #+#    #+#             */
-/*   Updated: 2025/04/18 09:27:31 by hrazafia         ###   ########.fr       */
+/*   Created: 2025/04/29 09:41:20 by hrazafia          #+#    #+#             */
+/*   Updated: 2025/04/29 09:41:21 by hrazafia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdexcept>
 #include "Bureaucrat.hpp"
+
+void	test1();
 
 int	main(void)
 {
-	Bureaucrat	foo;
-	std::cout << "Hello " << foo.getName() << std::endl;
+	test1();
 	return (0);
+}
+
+void	test1()
+{
+	try
+	{
+		Bureaucrat	foo("Foo", 3);
+
+		std::cout << foo << std::endl;
+		std::cout << std::endl;
+
+		std::cout << foo.getName() << " are promute!" << std::endl;
+		foo.incrementGrade();
+		std::cout << foo << std::endl;
+		std::cout << std::endl;
+
+		std::cout << foo.getName() << " are promute!" << std::endl;
+		foo.incrementGrade();
+		std::cout << foo << std::endl;
+		std::cout << std::endl;
+
+		std::cout << foo.getName() << " are promute!" << std::endl;
+		foo.incrementGrade();
+		std::cout << foo << std::endl;
+		std::cout << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

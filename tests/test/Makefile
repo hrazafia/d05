@@ -1,21 +1,23 @@
-NAME = bureaucrat
+NAME = test
 CXX = c++
 RM = rm -f
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-INCS =	Bureaucrat.hpp
+INCS =	A.hpp \
+		B.hpp
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp
+		A.cpp \
+		B.cpp
 
-INCS_DIR = ./
-SRCS_DIR = ./
 OBJS_DIR = ./
+SRCS_DIR = ./
+INCS_DIR = ./
 
 OBJS = $(SRCS:.cpp=.o)
 
-INC = $(addprefix $(INCS_DIR), $(INCS))
 SRC = $(addprefix $(SRCS_DIR), $(SRCS))
+INC = $(addprefix $(INCS_DIR), $(INCS))
 OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
 
 all: $(NAME)

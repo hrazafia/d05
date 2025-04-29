@@ -25,14 +25,19 @@ int	main(void)
 		if (std::cin.eof() == true)
 		{
 			std::cout << "exit" << std::endl;
-			break ;
+			return (0);
 		}
 		std::cout << "Enter another integer: ";
 		std::cin >> num2;
 		if (std::cin.eof() == true)
 		{
 			std::cout << "exit" << std::endl;
-			break ;
+			return (0);
+		}
+		if (num2 == 0)
+		{
+			std::cout << "No division by zero! Program is aborted." << std::endl;
+			return (1);
 		}
 		result = num1 / num2;
 		std::cout << "The result of division is: " << result << std::endl;

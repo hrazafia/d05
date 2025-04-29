@@ -12,30 +12,28 @@
 
 #include <iostream>
 
+void	first(void);
+void	second(void);
+
 int	main(void)
 {
-	int	num1;
-	int	num2;
-	int	result;
-
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << "Enter an integer: ";
-		std::cin >> num1;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
-		std::cout << "Enter another integer: ";
-		std::cin >> num2;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
-		result = num1 / num2;
-		std::cout << "The result of division is: " << result << std::endl;
-	}
+	first();
 	return 0;
+}
+
+void	first(void)
+{
+	try
+	{
+		second();
+	}
+	catch (int e)
+	{
+		std::cout << e << std::endl;
+	}
+}
+
+void	second(void)
+{
+	throw (16);
 }

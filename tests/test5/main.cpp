@@ -18,24 +18,26 @@ int	main(void)
 	int	num2;
 	int	result;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		std::cout << "Enter an integer: ";
 		std::cin >> num1;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
 		std::cout << "Enter another integer: ";
 		std::cin >> num2;
-		if (std::cin.eof() == true)
+		try
 		{
-			std::cout << "exit" << std::endl;
-			break ;
+			if (num2 == 0)
+			{
+				throw 0;
+			}
+			result = num1 / num2;
+			std::cout << "The result is: " << result << std::endl;
 		}
-		result = num1 / num2;
-		std::cout << "The result of division is: " << result << std::endl;
+		catch (int x)
+		{
+			std::cout << "Division by zero cannot be performed." << std::endl;
+			std::cout << x << std::endl;
+		}
 	}
 	return 0;
 }

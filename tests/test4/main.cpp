@@ -12,6 +12,8 @@
 
 #include <iostream>
 
+int	quotient(int first, int second);
+
 int	main(void)
 {
 	int	num1;
@@ -22,20 +24,26 @@ int	main(void)
 	{
 		std::cout << "Enter an integer: ";
 		std::cin >> num1;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
 		std::cout << "Enter another integer: ";
 		std::cin >> num2;
-		if (std::cin.eof() == true)
+		result = quotient(num1, num2);
+		if (result == -1)
 		{
-			std::cout << "exit" << std::endl;
-			break ;
+			std::cout << "Error, division by zero." << std::endl;
 		}
-		result = num1 / num2;
-		std::cout << "The result of division is: " << result << std::endl;
+		else
+		{
+			std::cout << "The result of division is: " << result << std::endl;
+		}
 	}
 	return 0;
+}
+
+int	quotient(int first, int second)
+{
+	if (second == 0)
+	{
+		return (-1);
+	}
+	return (first / second);
 }

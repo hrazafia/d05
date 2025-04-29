@@ -1,12 +1,11 @@
-NAME = bureaucrat
+NAME = test
 CXX = c++
 RM = rm -f
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-INCS =	Bureaucrat.hpp
+INCS =
 
-SRCS =	main.cpp \
-		Bureaucrat.cpp
+SRCS =	main.cpp
 
 INCS_DIR = ./
 SRCS_DIR = ./

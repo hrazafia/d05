@@ -25,17 +25,24 @@ int	main(void)
 		if (std::cin.eof() == true)
 		{
 			std::cout << "exit" << std::endl;
-			break ;
+			return (0);
 		}
 		std::cout << "Enter another integer: ";
 		std::cin >> num2;
 		if (std::cin.eof() == true)
 		{
 			std::cout << "exit" << std::endl;
-			break ;
+			return (0);
 		}
-		result = num1 / num2;
-		std::cout << "The result of division is: " << result << std::endl;
+		if (num2 == 0)
+		{
+			std::cout << "Division cannot be done in this case." << std::endl;
+		}
+		else
+		{
+			result = num1 / num2;
+			std::cout << "The result of division is: " << result << std::endl;
+		}
 	}
 	return 0;
 }

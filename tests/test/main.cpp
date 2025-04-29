@@ -11,31 +11,12 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include "A.hpp"
 
 int	main(void)
 {
-	int	num1;
-	int	num2;
-	int	result;
+	A	a1;
+	A	a2(a1);
 
-	for (int i = 0; i < 5; i++)
-	{
-		std::cout << "Enter an integer: ";
-		std::cin >> num1;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
-		std::cout << "Enter another integer: ";
-		std::cin >> num2;
-		if (std::cin.eof() == true)
-		{
-			std::cout << "exit" << std::endl;
-			break ;
-		}
-		result = num1 / num2;
-		std::cout << "The result of division is: " << result << std::endl;
-	}
 	return 0;
 }
