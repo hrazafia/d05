@@ -28,9 +28,6 @@ class Bureaucrat
 							Bureaucrat(const Bureaucrat& other);
 							~Bureaucrat();
 
-		const std::string&	getName() const throw();
-		int					getGrade() const throw();
-
 	private:
 							Bureaucrat();
 		Bureaucrat&			operator=(const Bureaucrat& other);
@@ -50,6 +47,9 @@ class Bureaucrat
 
 		void				incrementGrade() throw(GradeTooHighException);
 		void				decrementGrade() throw(GradeTooLowException);
+
+		const std::string&	getName() const throw();
+		int					getGrade() const throw();
 };
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
