@@ -16,18 +16,52 @@
 
 void	test1();
 void	test2();
+void	test3();
+void	test4();
 
 int	main(void)
 {
 	test1();
 	std::cout << std::endl;
 	test2();
+	std::cout << std::endl;
+	test3();
+	std::cout << std::endl;
+	test4();
 	return (0);
 }
 
 void	test1()
 {
 	std::cout << "====================Test 1====================" << std::endl;
+
+	try
+	{
+		Bureaucrat	foo("Foo", 0);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void	test2()
+{
+	std::cout << "====================Test 2====================" << std::endl;
+
+	try
+	{
+		Bureaucrat	Bar("Foo", 151);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+void	test3()
+{
+	std::cout << "====================Test 3====================" << std::endl;
 
 	try
 	{
@@ -57,9 +91,9 @@ void	test1()
 	}
 }
 
-void	test2()
+void	test4()
 {
-	std::cout << "====================Test 2====================" << std::endl;
+	std::cout << "====================Test 4====================" << std::endl;
 
 	try
 	{
