@@ -6,7 +6,7 @@
 /*   By: hrazafia <hrazafia@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 09:50:38 by hrazafia          #+#    #+#             */
-/*   Updated: 2025/05/27 07:02:57 by hrazafia         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:34:26 by hrazafia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ class Bureaucrat
 				virtual const char*	what() const throw();
 		};
 
-		void				incrementGrade() throw(GradeTooHighException);
-		void				decrementGrade() throw(GradeTooLowException);
+		void				incrementGrade() throw(Bureaucrat::GradeTooHighException);
+		void				decrementGrade() throw(Bureaucrat::GradeTooLowException);
 
 		const std::string&	getName() const throw();
 		int					getGrade() const throw();

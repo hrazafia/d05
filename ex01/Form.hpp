@@ -6,7 +6,7 @@
 /*   By: hrazafia <hrazafia@student.42antanana      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 06:19:03 by hrazafia          #+#    #+#             */
-/*   Updated: 2025/05/27 07:03:24 by hrazafia         ###   ########.fr       */
+/*   Updated: 2025/05/27 11:24:51 by hrazafia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ class Form
 		const int			getSignGrade() const throw();
 		const int			getExecGrade() const throw();
 
-		void				beSigned(const Bureaucrat& bureaucrat) throw(GradeTooLowException);
+		void				beSigned(const Bureaucrat& bureaucrat) throw(Form::GradeTooLowException);
 };
 
 std::ostream&	operator<<(std::ostream& out, const Form& form);
