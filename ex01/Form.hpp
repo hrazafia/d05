@@ -17,7 +17,7 @@
 # include <string>
 # include <stdexcept>
 
-# include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form
 {
@@ -49,10 +49,10 @@ class Form
 
 		const std::string&	getName() const throw();
 		bool				getIsSigned() const throw();
-		const int			getSignGrade() const throw();
-		const int			getExecGrade() const throw();
+		int					getSignGrade() const throw();
+		int					getExecGrade() const throw();
 
-		void				beSigned(const Bureaucrat& bureaucrat) throw(Form::GradeTooLowException);
+		void				beSigned(Bureaucrat bureaucrat) throw(Form::GradeTooLowException);
 };
 
 std::ostream&	operator<<(std::ostream& out, const Form& form);

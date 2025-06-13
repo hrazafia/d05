@@ -51,7 +51,7 @@ class Bureaucrat
 		const std::string&	getName() const throw();
 		int					getGrade() const throw();
 
-		void				signForm() throw();
+		void				signForm(Form& form) const throw();
 };
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& bureaucrat);

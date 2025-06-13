@@ -3,10 +3,12 @@ CXX = c++
 RM = rm -f
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-INCS =	Bureaucrat.hpp
+INCS =	Bureaucrat.hpp \
+		Form.cpp
 
 SRCS =	main.cpp \
-		Bureaucrat.cpp
+		Bureaucrat.cpp \
+		Form.cpp
 
 INCS_DIR = ./
 SRCS_DIR = ./
