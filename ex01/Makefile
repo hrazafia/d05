@@ -1,35 +1,24 @@
-NAME = form
+NAME = bureaucrat
 CXX = c++
 RM = rm -f
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-INCS =	Bureaucrat.hpp \
-		Form.hpp
+INCS = Bureaucrat.hpp Form.hpp
 
-SRCS =	main.cpp \
-		Bureaucrat.cpp \
-		Form.cpp
-
-INCS_DIR = ./
-SRCS_DIR = ./
-OBJS_DIR = ./
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-INC = $(addprefix $(INCS_DIR), $(INCS))
-SRC = $(addprefix $(SRCS_DIR), $(SRCS))
-OBJ = $(addprefix $(OBJS_DIR), $(OBJS))
-
 all: $(NAME)
 
-$(NAME): $(OBJ) $(INC)
-	$(CXX) -o $(NAME) $(OBJ) $(CXXFLAGS)
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-%.o: %.cpp $(INC)
-	$(CXX) -c -I$(INCS_DIR) -o $@ $< $(CXXFLAGS)
+%.o: %.cpp $(INCS)
+	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
