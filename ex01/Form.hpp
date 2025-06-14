@@ -22,15 +22,18 @@ class Bureaucrat;
 class Form
 {
 	private:
-		const std::string	name;
-		bool				isSigned;
-		const int			signGrade;
-		const int			execGrade;
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_signGrade;
+		const int			_execGrade;
 
 							Form();
 		Form&				operator=(const Form& other);
 
 	public:
+		static const int	maxGrade = 1;
+		static const int	minGrade = 150;
+
 							Form(const std::string& name, const int signGrade, const int execGrade);
 							Form(const Form& other);
 							~Form();
@@ -52,7 +55,7 @@ class Form
 		int					getSignGrade() const throw();
 		int					getExecGrade() const throw();
 
-		void				beSigned(Bureaucrat bureaucrat) throw(Form::GradeTooLowException);
+		void				beSigned(const Bureaucrat& bureaucrat) throw(Form::GradeTooLowException);
 };
 
 std::ostream&	operator<<(std::ostream& out, const Form& form);

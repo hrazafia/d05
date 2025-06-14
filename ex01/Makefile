@@ -4,7 +4,7 @@ RM = rm -f
 CXXFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 INCS =	Bureaucrat.hpp \
-		Form.cpp
+		Form.hpp
 
 SRCS =	main.cpp \
 		Bureaucrat.cpp \

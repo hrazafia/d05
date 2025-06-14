@@ -20,13 +20,16 @@
 class Bureaucrat
 {
 	private:
-		const std::string	name;
-		int					grade;
+		const std::string	_name;
+		int					_grade;
 
 							Bureaucrat();
 		Bureaucrat&			operator=(const Bureaucrat& other);
 
 	public:
+		static const int	maxGrade = 1;
+		static const int	minGrade = 150;
+
 							Bureaucrat(const Bureaucrat& other);
 							Bureaucrat(const std::string& name, int grade);
 							~Bureaucrat();
