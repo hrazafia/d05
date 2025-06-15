@@ -50,6 +50,12 @@ class AForm
 				virtual const char*	what() const throw();
 		};
 
+		class FormNotSignedException: public std::exception
+		{
+			public:
+				virtual const char*	what() const throw();
+		}
+
 		const std::string&	getName() const throw();
 		bool				getIsSigned() const throw();
 		int					getSignGrade() const throw();
@@ -57,7 +63,10 @@ class AForm
 
 		void				beSigned(const Bureaucrat& bureaucrat) throw(AForm::GradeTooLowException);
 
-		virtual void		execute(Bureaucrat const & executor) const = 0;
+		void				execute(Bureaucrat const & executor) const;
+		void				formCheck(const Bureaucrat& executor) const;
+
+		virtual void		toExecute() const = 0;
 };
 
 std::ostream&	operator<<(std::ostream& out, const AForm& form);

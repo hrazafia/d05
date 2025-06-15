@@ -55,6 +55,7 @@ class Bureaucrat
 		int					getGrade() const throw();
 
 		void				signForm(Form& form) const throw();
+		void				executeForm(AForm const & form) const;
 };
 
 std::ostream&	operator<<(std::ostream& out, const Bureaucrat& bureaucrat);
